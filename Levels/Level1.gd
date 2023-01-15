@@ -14,8 +14,7 @@ func _ready():
 
 
 func _process(delta):
-	if player.position.y < 640 and abs(player.position.y - camera.position.y) > 80 and alive:
-		print(player.position.y)
+	if player.position.y < 640 and abs(player.position.y - camera.position.y) > 40 and alive:
 		camera.set_position(Vector2(camera.position.x, player.position.y))
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().reload_current_scene()
