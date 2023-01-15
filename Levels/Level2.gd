@@ -30,3 +30,8 @@ func _on_Player_player_death():
 
 func _on_Respawn_timeout():
 	get_tree().reload_current_scene()
+
+
+func _on_Finish_body_entered(body):
+	if body.name == "Player":
+		get_tree().change_scene("res://Levels/Menu.tscn")
