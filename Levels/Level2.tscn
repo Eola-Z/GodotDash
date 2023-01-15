@@ -1129,7 +1129,7 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 15 )
 
 [node name="Finish" type="Area2D" parent="Level"]
-position = Vector2( 49000, 672 )
+position = Vector2( 51000, 672 )
 rotation = 3.14159
 scale = Vector2( 0.5, 50 )
 
