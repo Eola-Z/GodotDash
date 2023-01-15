@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://Obstacles/Portals/QuadSpeed.png" type="Texture" id=1]
 [ext_resource path="res://Obstacles/Portals/DoubleSpeed.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Obstacles/Layout/SolidBlackCrossSquare.png" type="Texture" id=31]
 [ext_resource path="res://Obstacles/Layout/SolidBlackSquare.png" type="Texture" id=32]
 [ext_resource path="res://Obstacles/Layout/SolidBlackXSquare.png" type="Texture" id=33]
+[ext_resource path="res://Obstacles/Layout/transparency_mask.png" type="Texture" id=34]
 
 [sub_resource type="SpriteFrames" id=129]
 animations = [ {
@@ -72,6 +73,9 @@ points = PoolVector2Array( 1920, 128, 0, 128, 0, 0, 1920, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=178]
+extents = Vector2( 91, 27.89 )
 
 [sub_resource type="ConvexPolygonShape2D" id=85]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -1124,6 +1128,26 @@ tile_data = PoolIntArray( 1179648, 0, 0 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 15 )
 
+[node name="Finish" type="Area2D" parent="Level"]
+position = Vector2( 49000, 672 )
+rotation = 3.14159
+scale = Vector2( 0.5, 50 )
+
+[node name="TextureRect" type="TextureRect" parent="Level/Finish"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Finish"]
+position = Vector2( 86, 27.85 )
+shape = SubResource( 178 )
+
+[node name="ColorRect" type="ColorRect" parent="Level/Finish"]
+margin_left = -2110.0
+margin_right = 40.0
+margin_bottom = 47.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Layout" type="Area2D" parent="Level"]
 
 [node name="Blocks" type="TileMap" parent="Level/Layout"]
@@ -1316,6 +1340,7 @@ smoothing_enabled = true
 
 [connection signal="player_death" from="Player" to="." method="_on_Player_player_death"]
 [connection signal="player_death" from="Player" to="Level" method="_on_Player_player_death"]
+[connection signal="body_entered" from="Level/Finish" to="." method="_on_Finish_body_entered"]
 [connection signal="body_entered" from="Level/Layout" to="Player" method="_on_Layout_body_entered"]
 [connection signal="body_entered" from="Level/Portals/HalfSpeed" to="Level" method="_on_HalfSpeed_body_entered"]
 [connection signal="body_entered" from="Level/Portals/NormalSpeed" to="Level" method="_on_NormalSpeed_body_entered"]
