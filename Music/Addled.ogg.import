@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Addled.ogg-dbfdaa57d5d6b5b4fe4b1ff9090013db.oggstr"
+
+[deps]
+
+source_file="res://Music/Addled.ogg"
+dest_files=[ "res://.import/Addled.ogg-dbfdaa57d5d6b5b4fe4b1ff9090013db.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

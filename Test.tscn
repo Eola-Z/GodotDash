@@ -1,0 +1,881 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://Icons/Square.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level.gd" type="Script" id=2]
+[ext_resource path="res://Obstacles/Layout/BlackSquare.png" type="Texture" id=3]
+[ext_resource path="res://Obstacles/Layout/BlackSpike.png" type="Texture" id=5]
+[ext_resource path="res://Obstacles/Ground.png" type="Texture" id=6]
+[ext_resource path="res://Obstacles/Layout/BlackHalfSpike.png" type="Texture" id=7]
+[ext_resource path="res://Obstacles/Portals/HalfSpeed.png" type="Texture" id=8]
+[ext_resource path="res://Obstacles/Portals/DoubleSpeed.png" type="Texture" id=9]
+[ext_resource path="res://Obstacles/Portals/NormalSpeed.png" type="Texture" id=10]
+[ext_resource path="res://Obstacles/Portals/QuadSpeed.png" type="Texture" id=11]
+[ext_resource path="res://Obstacles/Portals/TripleSpeed.png" type="Texture" id=12]
+[ext_resource path="res://Test.gd" type="Script" id=13]
+[ext_resource path="res://Obstacles/Pads/YellowPad.png" type="Texture" id=14]
+[ext_resource path="res://Obstacles/Pads/PurplePad.png" type="Texture" id=15]
+[ext_resource path="res://Obstacles/Portals/YellowGrav.png" type="Texture" id=16]
+[ext_resource path="res://Obstacles/Portals/BlueGrav.png" type="Texture" id=17]
+[ext_resource path="res://Obstacles/Orbs/YellowOrb.png" type="Texture" id=18]
+[ext_resource path="res://Obstacles/Orbs/PurpleOrb.png" type="Texture" id=19]
+[ext_resource path="res://Obstacles/Pads/BluePad.png" type="Texture" id=20]
+[ext_resource path="res://Obstacles/Orbs/BlueOrb.png" type="Texture" id=21]
+[ext_resource path="res://Obstacles/Orbs/RedOrb.png" type="Texture" id=22]
+[ext_resource path="res://Obstacles/Pads/RedPad.png" type="Texture" id=23]
+
+[sub_resource type="ConvexPolygonShape2D" id=84]
+points = PoolVector2Array( 1920, 128, 0, 128, 0, 0, 1920, 0 )
+
+[sub_resource type="TileSet" id=6]
+0/name = "Ground.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1920, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 84 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 84 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=85]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "BlackSquare.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 85 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 85 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=86]
+points = PoolVector2Array( 48, 64, 16, 64, 16, 52, 48, 52 )
+
+[sub_resource type="ConvexPolygonShape2D" id=87]
+points = PoolVector2Array( 48, 64, 20, 64, 20, 36, 48, 36 )
+
+[sub_resource type="TileSet" id=9]
+0/name = "BlackHalfSpike.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 86 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "BlackSpike.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 87 )
+1/shape_one_way = true
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=88]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=12]
+0/name = "HalfSpeed.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 88 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 88 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=89]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "NormalSpeed.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 89 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 89 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=90]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=16]
+0/name = "DoubleSpeed.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 90 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 90 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=91]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=18]
+0/name = "TripleSpeed.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 91 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 91 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=92]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=20]
+0/name = "QuadSpeed.png 0"
+0/texture = ExtResource( 11 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 92 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 92 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=93]
+points = PoolVector2Array( 40, 64, 24, 64, 24, 0, 40, 0 )
+
+[sub_resource type="TileSet" id=40]
+0/name = "YellowGrav.png 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 93 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 93 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=94]
+points = PoolVector2Array( 40, 64, 24, 64, 24, 0, 40, 0 )
+
+[sub_resource type="TileSet" id=42]
+0/name = "BlueGrav.png 0"
+0/texture = ExtResource( 17 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 94 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 94 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=95]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 61, 64, 61 )
+
+[sub_resource type="TileSet" id=35]
+0/name = "YellowPad.png 0"
+0/texture = ExtResource( 14 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 95 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=96]
+points = PoolVector2Array( 62, 61, 2, 61, 2, 60, 62, 60 )
+
+[sub_resource type="TileSet" id=38]
+0/name = "PurplePad.png 0"
+0/texture = ExtResource( 15 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 96 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=97]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 61, 64, 61 )
+
+[sub_resource type="TileSet" id=59]
+0/name = "BluePad.png 0"
+0/texture = ExtResource( 20 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 97 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=98]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 61, 64, 61 )
+
+[sub_resource type="TileSet" id=83]
+0/name = "RedPad.png 0"
+0/texture = ExtResource( 23 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 98 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=99]
+points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+
+[sub_resource type="TileSet" id=48]
+0/name = "YellowOrb.png 0"
+0/texture = ExtResource( 18 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 99 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 99 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=100]
+points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+
+[sub_resource type="TileSet" id=51]
+0/name = "PurpleOrb.png 0"
+0/texture = ExtResource( 19 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 100 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 100 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=101]
+points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+
+[sub_resource type="TileSet" id=61]
+0/name = "BlueOrb.png 0"
+0/texture = ExtResource( 21 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 101 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 101 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=102]
+points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+
+[sub_resource type="TileSet" id=63]
+0/name = "RedOrb.png 0"
+0/texture = ExtResource( 22 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 102 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 102 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Test" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 13 )
+
+[node name="Square" parent="." instance=ExtResource( 1 )]
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
+format = 1
+tile_data = PoolIntArray( 1179648, 0, 0 )
+
+[node name="Level" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Layout" type="Area2D" parent="Level"]
+
+[node name="Blocks" type="TileMap" parent="Level/Layout"]
+position = Vector2( 0, -1 )
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( 196762, 0, 0, 196763, 0, 0, 196764, 0, 0, 196765, 0, 0, 196766, 0, 0, 196767, 0, 0, 196768, 0, 0, 196769, 0, 0, 196770, 0, 0, 262292, 0, 0, 262293, 0, 0, 262294, 0, 0, 262295, 0, 0, 262296, 0, 0, 262297, 0, 0, 327748, 0, 0, 393268, 0, 0, 458800, 0, 0, 458820, 0, 0, 524299, 1, 0, 524314, 2, 0, 524315, 1, 0, 524330, 1, 0, 524331, 1, 0, 524332, 0, 0, 524333, 1, 0, 524334, 1, 0, 524335, 1, 0, 524337, 1, 0, 524338, 1, 0, 524339, 1, 0, 524353, 1, 0, 524356, 0, 0 )
+
+[node name="Spikes" type="TileMap" parent="Level/Layout"]
+tile_set = SubResource( 9 )
+collision_use_parent = true
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 262304, 1073741824, 0, 262305, 1073741824, 0, 262306, 1073741824, 0, 524305, 1, 0, 524314, 0, 0, 524315, 1, 0, 524330, 1, 0, 524331, 1, 0, 524333, 1, 0, 524334, 1, 0, 524335, 1, 0, 524337, 1, 0, 524338, 1, 0, 524339, 1, 0, 524370, 1, 0, 524371, 1, 0, 524389, 1, 0, 524390, 1, 0, 524405, 1, 0, 524406, 1, 0, 524407, 1, 0 )
+
+[node name="Portals" type="Node2D" parent="Level"]
+scale = Vector2( 2, 2 )
+
+[node name="HalfSpeed" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/HalfSpeed"]
+tile_set = SubResource( 12 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 458827, 0, 0 )
+
+[node name="NormalSpeed" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/NormalSpeed"]
+tile_set = SubResource( 14 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 458844, 0, 0 )
+
+[node name="DoubleSpeed" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/DoubleSpeed"]
+tile_set = SubResource( 16 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 458863, 0, 0 )
+
+[node name="TripleSpeed" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/TripleSpeed"]
+tile_set = SubResource( 18 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+
+[node name="QuadSpeed" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/QuadSpeed"]
+tile_set = SubResource( 20 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+
+[node name="YellowGrav" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/YellowGrav"]
+tile_set = SubResource( 40 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 393362, 0, 0 )
+
+[node name="BlueGrav" type="Area2D" parent="Level/Portals"]
+
+[node name="TileMap" type="TileMap" parent="Level/Portals/BlueGrav"]
+tile_set = SubResource( 42 )
+cell_size = Vector2( 32, 32 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 196772, 1073741824, 0 )
+
+[node name="Pads" type="Node2D" parent="Level"]
+
+[node name="YellowPad" type="Area2D" parent="Level/Pads"]
+
+[node name="TileMap" type="TileMap" parent="Level/Pads/YellowPad"]
+tile_set = SubResource( 35 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 524428, 0, 0, 1048929, 0, 0 )
+
+[node name="PurplePad" type="Area2D" parent="Level/Pads"]
+
+[node name="TileMap" type="TileMap" parent="Level/Pads/PurplePad"]
+tile_set = SubResource( 38 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 524416, 0, 0 )
+
+[node name="BluePad" type="Area2D" parent="Level/Pads"]
+
+[node name="TileMap" type="TileMap" parent="Level/Pads/BluePad"]
+tile_set = SubResource( 59 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 524485, 0, 0 )
+
+[node name="RedPad" type="Area2D" parent="Level/Pads"]
+
+[node name="TileMap" type="TileMap" parent="Level/Pads/RedPad"]
+tile_set = SubResource( 83 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 524502, 0, 0 )
+
+[node name="Orbs" type="Node2D" parent="Level"]
+
+[node name="YellowOrb" type="Area2D" parent="Level/Orbs"]
+position = Vector2( -16, -16 )
+
+[node name="TileMap" type="TileMap" parent="Level/Orbs/YellowOrb"]
+tile_set = SubResource( 48 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 393396, 0, 0 )
+
+[node name="PurpleOrb" type="Area2D" parent="Level/Orbs"]
+position = Vector2( -16, -16 )
+
+[node name="TileMap" type="TileMap" parent="Level/Orbs/PurpleOrb"]
+tile_set = SubResource( 51 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 196796, 0, 0, 393384, 0, 0, 393388, 0, 0, 393392, 0, 0 )
+
+[node name="BlueOrb" type="Area2D" parent="Level/Orbs"]
+position = Vector2( -16, -16 )
+
+[node name="TileMap" type="TileMap" parent="Level/Orbs/BlueOrb"]
+tile_set = SubResource( 61 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 196800, 0, 0, 196815, 0, 0, 393401, 0, 0 )
+
+[node name="RedOrb" type="Area2D" parent="Level/Orbs"]
+position = Vector2( -16, -16 )
+
+[node name="TileMap" type="TileMap" parent="Level/Orbs/RedOrb"]
+tile_set = SubResource( 63 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 196807, 0, 0 )
+
+[connection signal="body_entered" from="Level/Portals/HalfSpeed" to="Level" method="_on_HalfSpeed_body_entered"]
+[connection signal="body_entered" from="Level/Portals/NormalSpeed" to="Level" method="_on_NormalSpeed_body_entered"]
+[connection signal="body_entered" from="Level/Portals/DoubleSpeed" to="Level" method="_on_DoubleSpeed_body_entered"]
+[connection signal="body_entered" from="Level/Portals/TripleSpeed" to="Level" method="_on_TripleSpeed_body_entered"]
+[connection signal="body_entered" from="Level/Portals/QuadSpeed" to="Level" method="_on_QuadSpeed_body_entered"]

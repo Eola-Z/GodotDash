@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Count_to_5.ogg-82a9c9d98c607bdf9961d847b93d91fb.oggstr"
+
+[deps]
+
+source_file="res://Music/Count_to_5.ogg"
+dest_files=[ "res://.import/Count_to_5.ogg-82a9c9d98c607bdf9961d847b93d91fb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
